@@ -27,8 +27,8 @@ void setup() {
   lcd.init();                      // initialize the lcd 
   lcd.backlight();
   lcd.clear();
-  //init7X11(scale1,LOADCELL_DOUT_PIN_1 ,LOADCELL_SCK_PIN_1 ,1);
- // init7X11(scale2, LOADCELL_DOUT_PIN_2 ,LOADCELL_SCK_PIN_2 ,2);
+  init7X11(scale1,LOADCELL_DOUT_PIN_1 ,LOADCELL_SCK_PIN_1 ,1);
+ init7X11(scale2, LOADCELL_DOUT_PIN_2 ,LOADCELL_SCK_PIN_2 ,2);
   init7X11(scale3, LOADCELL_DOUT_PIN_3 ,LOADCELL_SCK_PIN_3,3);
 }
 void init7X11(HX711& scale, int LOADCELL_DOUT_PIN, int LOADCELL_SCK_PIN,int no)
@@ -88,7 +88,7 @@ void getRawScaleValue(HX711& scale,int no)
   scale.power_up();
 }
 void loop() {
-  //getRawScaleValue(scale1,1);
-  //getRawScaleValue(scale2,2);
+  getRawScaleValue(scale1,1);
+  getRawScaleValue(scale2,2);
   getRawScaleValue(scale3,3);
 }
